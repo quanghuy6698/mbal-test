@@ -22,7 +22,7 @@ ng serve
 ```
 ## Note**
 ### 1.
-Because server is local, so you have to run Chrome without web security
+Because server is local, so you have to disable CORS by run Chrome without web security
 
 Copy this to create a new Windows shortcut
 ```
