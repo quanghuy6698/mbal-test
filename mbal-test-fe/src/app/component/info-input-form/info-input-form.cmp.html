@@ -1,0 +1,23 @@
+<form nz-form [nzLayout]="'vertical'" [formGroup]="infoInputForm">
+  <nz-form-label nzFor="name">Name&nbsp;<span class="txt-danger">*</span></nz-form-label>
+  <nz-form-item>
+    <nz-form-control>
+      <input formControlName="name" nz-input type="text" placeholder="Name" id="name" class="full-width" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-label nzFor="dob">Date of Birth&nbsp;<span class="txt-danger">*</span></nz-form-label>
+  <nz-form-item>
+    <nz-form-control>
+      <nz-date-picker formControlName="dob" id="dob" class="full-width"></nz-date-picker>
+    </nz-form-control>
+  </nz-form-item>
+
+  <form-msg-cmp [type]="formMsgType()" [msg]="formMsg()" [hidden]="!isShowFormMsg()"> </form-msg-cmp>
+
+  <nz-form-item>
+    <nz-form-control>
+      <button nz-button nzType="primary" (click)="onSubmit()">Submit</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

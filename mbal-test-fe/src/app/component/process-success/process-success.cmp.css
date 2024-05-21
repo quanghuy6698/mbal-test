@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.go-back {
+  color: green;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 2px solid green;
+  padding: 8px;
+}
+
+.success {
+  color: mediumspringgreen;
+  font-size: 30px;
+  text-align: center;
+}

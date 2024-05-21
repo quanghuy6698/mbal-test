@@ -1,0 +1,17 @@
+<div class="wrapper">
+  <div class="register-form">
+    <div *ngIf="isShowInfoForm()">
+      <h1 class="register-form__title">Register</h1>
+      <info-input-form-cmp (showAddressForm)="showAddressForm()"></info-input-form-cmp>
+    </div>
+
+    <div *ngIf="isShowAddressForm()">
+      <h1 class="register-form__title">Enter your address</h1>
+      <address-input-form-cmp (completeRegister)="completeRegister()"></address-input-form-cmp>
+    </div>
+
+    <div *ngIf="isRegisterSuccess()">
+      <process-success-cmp (goBack)="reRegister()"></process-success-cmp>
+    </div>
+  </div>
+</div>

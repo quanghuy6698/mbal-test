@@ -1,0 +1,11 @@
+# FE
+
+mbal-test-fe/.vscode/
+mbal-test-fe/node_modules/
+mbal-test-fe/package-lock.json
+
+# BE
+
+mbal-test-be/.vscode/
+mbal-test-be/node_modules/
+mbal-test-be/package-lock.json
