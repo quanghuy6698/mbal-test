@@ -32,6 +32,6 @@ Then open that shortcut.
 ### 2.
 Cause this is just a demo, so APIs are very simple.
 
-With the first form, typing a name starts with 'A' or 'a' to successfully pass the validator and go to the next form.
+With the first form, typing a name starts with **'A'** or **'a'** to successfully pass the validator and go to the next form.
 
 Otherwise you will see error.
