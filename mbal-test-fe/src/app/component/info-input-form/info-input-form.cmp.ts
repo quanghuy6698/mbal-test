@@ -123,9 +123,17 @@ export class InfoInputFormCmp implements OnInit {
    * @return info object
    */
   getFormValues(): IInfoModel {
+    let doDob: Date;
+    let dobValue = this.infoInputForm.controls[INFO_INPUT_FORM.DOB.KEY].value ? this.infoInputForm.controls[INFO_INPUT_FORM.DOB.KEY].value?.toString() : '';
+    if (dobValue) {
+      doDob = new Date(dobValue);
+    } else {
+      doDob = new Date();
+    }
+
     let info: IInfoModel = {
       name: this.infoInputForm.controls[INFO_INPUT_FORM.NAME.KEY].value ? this.infoInputForm.controls[INFO_INPUT_FORM.NAME.KEY].value! : '',
-      dob: this.infoInputForm.controls[INFO_INPUT_FORM.DOB.KEY].value ? this.infoInputForm.controls[INFO_INPUT_FORM.DOB.KEY].value! : '',
+      dob: doDob?.toISOString().split('T')[0],
     };
     return info;
   }
