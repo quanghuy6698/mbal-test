@@ -13,5 +13,13 @@
     <div *ngIf="isRegisterSuccess()">
       <process-success-cmp (goBack)="reRegister()"></process-success-cmp>
     </div>
+
+    <div class="process">
+      <nz-steps [nzCurrent]="currentStep()">
+        <nz-step nzTitle="Step 1" nzDescription="Basic info"></nz-step>
+        <nz-step nzTitle="Step 2" nzDescription="Address info"></nz-step>
+        <nz-step nzTitle="Step 3" nzDescription="Complete"></nz-step>
+      </nz-steps>
+    </div>
   </div>
 </div>

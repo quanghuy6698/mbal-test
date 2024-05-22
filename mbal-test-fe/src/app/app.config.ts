@@ -6,6 +6,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzFlexModule } from 'ng-zorro-antd/flex';
+import { NzStepsModule } from 'ng-zorro-antd/steps';
 import { provideHttpClient } from '@angular/common/http';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { NZ_ICONS } from 'ng-zorro-antd/icon';
@@ -21,6 +22,6 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
     { provide: NZ_ICONS, useValue: icons },
     { provide: NZ_I18N, useValue: en_US },
-    importProvidersFrom([NzFormModule, NzInputModule, NzDatePickerModule, NzButtonModule, NzFlexModule]),
+    importProvidersFrom([NzFormModule, NzInputModule, NzDatePickerModule, NzButtonModule, NzFlexModule, NzStepsModule]),
   ],
 };
