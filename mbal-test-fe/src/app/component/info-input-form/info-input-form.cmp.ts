@@ -56,12 +56,13 @@ export class InfoInputFormCmp implements OnInit {
    *
    */
   onSubmit() {
-    let errMsg = this.validateFormValues();
-    if (errMsg) {
-      this.showFormMsg(MESSAGE_TYPES.ERROR, errMsg);
+    if (this.infoInputForm.invalid) {
+      Object.values(this.infoInputForm.controls).forEach((ctrl) => {
+        ctrl.markAsTouched();
+        ctrl.updateValueAndValidity();
+      });
       return;
     }
-
     this.submitInfo();
   }
 
@@ -83,30 +84,6 @@ export class InfoInputFormCmp implements OnInit {
         this.showFormMsg('error', SOME_PROBLEM_HAS_OCCURED_MSG);
       },
     });
-  }
-
-  /**
-   * Validate form values
-   *
-   * @return error message
-   */
-  validateFormValues(): string {
-    // Required name
-    if (this.infoInputForm.get(INFO_INPUT_FORM.NAME.KEY)?.errors?.['required']) {
-      return FORM_FIELD_REQUIRED_MSG;
-    }
-
-    // Name incorrect format
-    if (this.infoInputForm.get(INFO_INPUT_FORM.NAME.KEY)?.errors?.['pattern']) {
-      return FORM_NAME_INCORRECT_FORMAT_MSG;
-    }
-
-    // Required date of birth
-    if (this.infoInputForm.get(INFO_INPUT_FORM.DOB.KEY)?.errors) {
-      return FORM_FIELD_REQUIRED_MSG;
-    }
-
-    return '';
   }
 
   resetForm() {

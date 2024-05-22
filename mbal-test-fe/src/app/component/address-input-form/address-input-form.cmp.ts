@@ -55,9 +55,11 @@ export class AddressInputFormCmp implements OnInit {
    *
    */
   onSubmit() {
-    let errMsg = this.validateFormValues();
-    if (errMsg) {
-      this.showFormMsg(MESSAGE_TYPES.ERROR, errMsg);
+    if (this.addressInputForm.invalid) {
+      Object.values(this.addressInputForm.controls).forEach((ctrl) => {
+        ctrl.markAsTouched();
+        ctrl.updateValueAndValidity();
+      });
       return;
     }
 
@@ -78,35 +80,6 @@ export class AddressInputFormCmp implements OnInit {
         console.log(err);
       },
     });
-  }
-
-  /**
-   * Validate form values
-   *
-   * @return error message
-   */
-  validateFormValues(): string {
-    // Required line1
-    if (!this.addressInputForm.controls[ADDRESS_INPUT_FORM.LINE1.KEY].value) {
-      return FORM_FIELD_REQUIRED_MSG;
-    }
-
-    // Required city
-    if (!this.addressInputForm.controls[ADDRESS_INPUT_FORM.CITY.KEY].value) {
-      return FORM_FIELD_REQUIRED_MSG;
-    }
-
-    // Required state
-    if (!this.addressInputForm.controls[ADDRESS_INPUT_FORM.STATE.KEY].value) {
-      return FORM_FIELD_REQUIRED_MSG;
-    }
-
-    // Required country
-    if (!this.addressInputForm.controls[ADDRESS_INPUT_FORM.COUNTRY.KEY].value) {
-      return FORM_FIELD_REQUIRED_MSG;
-    }
-
-    return '';
   }
 
   resetForm() {

@@ -1,36 +1,46 @@
 <form nz-form [nzLayout]="'vertical'" [formGroup]="addressInputForm">
   <nz-form-label nzFor="line1">Line 1&nbsp;<span class="txt-danger">*</span></nz-form-label>
   <nz-form-item>
-    <nz-form-control>
+    <nz-form-control [nzErrorTip]="line1InputErr">
       <input formControlName="line1" nz-input type="text" placeholder="Line 1" id="line1" style="width: 100%" />
+
+      <ng-template #line1InputErr let-control> @if (control.errors?.['required']) { Field is required. } </ng-template>
     </nz-form-control>
   </nz-form-item>
 
   <nz-form-label nzFor="line2">Line 2</nz-form-label>
   <nz-form-item>
-    <nz-form-control>
+    <nz-form-control [nzErrorTip]="line2InputErr">
       <input formControlName="line2" nz-input type="text" placeholder="Line 2" id="line2" style="width: 100%" />
+
+      <ng-template #line2InputErr let-control> @if (control.errors?.['required']) { Field is required. } </ng-template>
     </nz-form-control>
   </nz-form-item>
 
   <nz-form-label nzFor="city">City&nbsp;<span class="txt-danger">*</span></nz-form-label>
   <nz-form-item>
-    <nz-form-control>
+    <nz-form-control [nzErrorTip]="cityInputErr">
       <input formControlName="city" nz-input type="text" placeholder="City" id="city" style="width: 100%" />
+
+      <ng-template #cityInputErr let-control> @if (control.errors?.['required']) { Field is required. } </ng-template>
     </nz-form-control>
   </nz-form-item>
 
   <nz-form-label nzFor="state">State&nbsp;<span class="txt-danger">*</span></nz-form-label>
   <nz-form-item>
-    <nz-form-control>
+    <nz-form-control [nzErrorTip]="stateInputErr">
       <input formControlName="state" nz-input type="text" placeholder="State" id="state" style="width: 100%" />
+
+      <ng-template #stateInputErr let-control> @if (control.errors?.['required']) { Field is required. } </ng-template>
     </nz-form-control>
   </nz-form-item>
 
   <nz-form-label nzFor="country">Country&nbsp;<span class="txt-danger">*</span></nz-form-label>
   <nz-form-item>
-    <nz-form-control>
+    <nz-form-control [nzErrorTip]="countryInputErr">
       <input formControlName="country" nz-input type="text" placeholder="Country" id="country" style="width: 100%" />
+
+      <ng-template #countryInputErr let-control> @if (control.errors?.['required']) { Field is required. } </ng-template>
     </nz-form-control>
   </nz-form-item>
 
