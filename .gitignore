@@ -2,8 +2,10 @@
 mbal-test-fe/.vscode/
 mbal-test-fe/node_modules/
 mbal-test-fe/package-lock.json
+mbal-test-fe/.angular
 
 # BE
 mbal-test-be/.vscode/
 mbal-test-be/node_modules/
 mbal-test-be/package-lock.json
+mbal-test-be/dist/
